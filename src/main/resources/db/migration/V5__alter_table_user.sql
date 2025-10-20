@@ -1,0 +1,1 @@
+ALTER TABLE user CHANGE password password TEXT NOT NULL;
