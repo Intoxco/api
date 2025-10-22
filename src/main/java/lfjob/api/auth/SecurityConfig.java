@@ -48,6 +48,7 @@ public class SecurityConfig {
                             response.setContentType("application/json");
                             BodyData body = new BodyData();
                             body.setMessage("Forbidden");
+                            System.out.println("Response sent: "+ new Gson().toJson(body));
                             response.getWriter().write(new Gson().toJson(body));
                         })
                         .authenticationEntryPoint((request, response, authException) -> {
@@ -55,6 +56,7 @@ public class SecurityConfig {
                             response.setContentType("application/json");
                             BodyData body = new BodyData();
                             body.setMessage("Forbidden");
+                            System.out.println("Response sent: "+ new Gson().toJson(body));
                             response.getWriter().write(new Gson().toJson(body));
                         })
                         )

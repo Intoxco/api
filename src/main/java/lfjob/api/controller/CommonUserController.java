@@ -73,7 +73,9 @@ public class CommonUserController {
             bodyData.setExperience(commonUser.getExperience());
             bodyData.setPhone(commonUser.getPhone());
             bodyData.setEducation(commonUser.getEducation());
-            return new ResponseEntity<>(gson.toJson(bodyData),HttpStatus.OK);
+            ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData),HttpStatus.OK);
+            System.out.println("Response sent: "+ response);
+            return response;
         }catch(NoSuchElementException e) {
             bodyData.setMessage("User not found");
             ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData), HttpStatus.NOT_FOUND);
@@ -81,7 +83,9 @@ public class CommonUserController {
             return response;
         }catch (AccessDeniedException e) {
             bodyData.setMessage("Forbidden");
-            return new ResponseEntity<>(gson.toJson(bodyData), HttpStatus.FORBIDDEN);
+            ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData), HttpStatus.FORBIDDEN);
+            System.out.println("Response sent:" + response);
+            return response;
         }
     }
     @PatchMapping("/{userId}")
@@ -95,7 +99,9 @@ public class CommonUserController {
             CommonUser commonUser = commonUserRepository.getReferenceById(userId);
             commonUser.updateData(commonUserData);
             commonUser.setPassword(encryptedPassword);
-            return new ResponseEntity<>(HttpStatus.OK);
+            ResponseEntity<String> response = new ResponseEntity<>(HttpStatus.OK);
+            System.out.println("Response sent: "+ response);
+            return response;
         }catch(JpaSystemException e){
             bodyData.setMessage("Username already exists");
             ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData),HttpStatus.CONFLICT);
@@ -108,7 +114,9 @@ public class CommonUserController {
             return response;
         }catch (AccessDeniedException e) {
         bodyData.setMessage("Forbidden");
-        return new ResponseEntity<>(gson.toJson(bodyData), HttpStatus.FORBIDDEN);
+        ResponseEntity<String> response = new  ResponseEntity<>(gson.toJson(bodyData), HttpStatus.FORBIDDEN);
+        System.out.println("Response sent:" +response);
+        return response;
     }
     }
 
@@ -131,17 +139,26 @@ public class CommonUserController {
         BodyData bodyData = new BodyData();
         try {
             if(checkToken(userId,req,bodyData)){
+                ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData),HttpStatus.UNAUTHORIZED);
+                System.out.println("Response sent: "+ response);
+                return response;
 
             }
             commonUserRepository.deleteById(userId);
-            return new ResponseEntity<>(HttpStatus.OK);
+            ResponseEntity<String> response = new ResponseEntity<>(HttpStatus.OK);
+            System.out.println("Response sent: "+ response);
+            return response;
         } catch(NoSuchElementException e){
 
             bodyData.setMessage("User not found");
-            return new ResponseEntity<>(gson.toJson(bodyData),HttpStatus.NOT_FOUND);
+            ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData),HttpStatus.NOT_FOUND);
+            System.out.println("Response sent:" +response);
+            return response;
         }catch (AccessDeniedException e) {
             bodyData.setMessage("Forbidden");
-            return new ResponseEntity<>(gson.toJson(bodyData), HttpStatus.FORBIDDEN);
+            ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData),HttpStatus.FORBIDDEN);
+            System.out.println("Response sent:" +response);
+            return response;
         }
     }
     @ExceptionHandler(SQLException.class)

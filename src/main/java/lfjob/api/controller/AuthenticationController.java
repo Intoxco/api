@@ -38,8 +38,12 @@ public class AuthenticationController {
     public ResponseEntity<String> logout(HttpServletRequest request) {
         System.out.println("Token:"+TokenService.recoverToken(request));
         if(TokenService.removeFromWhiteList(TokenService.recoverToken(request))){
-            return ResponseEntity.ok("success");
+            ResponseEntity <String> response = new ResponseEntity<>("success",HttpStatus.OK);
+            System.out.println("Response sent:"+ response);
+            return response;
         }
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        ResponseEntity <String> response = new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        System.out.println("Response sent:"+ response);
+        return response;
     }
 }
