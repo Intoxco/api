@@ -42,6 +42,7 @@ public class CommonUserController {
         try {
             String password = new BCryptPasswordEncoder().encode(commonUserData.password());
             CommonUser user = new CommonUser(commonUserData);
+            user.setName(user.getName().toUpperCase());
             user.setPassword(password);
             userRepository.save(user);
             bodyData.setMessage("Created");
@@ -98,6 +99,7 @@ public class CommonUserController {
             String encryptedPassword = new BCryptPasswordEncoder().encode(commonUserData.password());
             CommonUser commonUser = commonUserRepository.getReferenceById(userId);
             commonUser.updateData(commonUserData);
+            commonUser.setName(commonUserData.name().toUpperCase());
             commonUser.setPassword(encryptedPassword);
             ResponseEntity<String> response = new ResponseEntity<>(HttpStatus.OK);
             System.out.println("Response sent: "+ response);

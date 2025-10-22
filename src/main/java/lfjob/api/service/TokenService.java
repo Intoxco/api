@@ -31,7 +31,7 @@ public class TokenService {
         Long expiration =  decoded.getClaim("expiration").asLong();
         return new TokenData(id,username,UserRoles.valueOf(role.toUpperCase()),expiration);
     }
-    public static String recoverToken(HttpServletRequest request) {
+    public static String recoverToken(HttpServletRequest request) { 
         var authHeader = request.getHeader("Authorization");
         if (authHeader == null) {
             return null;
