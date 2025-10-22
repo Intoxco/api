@@ -59,8 +59,6 @@ public class CommonUserController {
             System.out.println("Response sent:" +response);
             return response;
         }
-
-
     }
     @GetMapping("/{userId}")
     public ResponseEntity<String> read(@PathVariable Long userId,HttpServletRequest req){

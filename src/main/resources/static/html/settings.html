@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LFJob</title>
+        <link rel="icon" href="../images/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/login.css">
+    </head>
+    <body>
+        <nav>
+            <a href="settings.html">Settings</a>
+            <a href="homePage.html">Profile</a>
+        </nav>
+        <form id= "form" method="POST">
+            <fieldset>
+                <legend>Update data</legend>
+                <label for="password">Password</label>
+                <input type="text" id="password" pattern  ="^[0-9A-Za-z]{3,20}$" required>
+                <label for="name">Name</label>
+                <input type="text" id="name" minLength="4" maxlength="150" required>
+                <label for="email">Email</label>
+                <input type = "email" id="email" >
+                <label for="phone">Phone</label>
+                <input type = "text" id = "phone" placeholder="(DD)NNNNN-NNNN" pattern = "(.|\([0-9]{2}\)|[0-9]{2})9?[0-9]{4}-?[0-9]{4}">
+                <label for="experience">Experience</label>
+                <textarea id="experience" placeholder =  "experience" minlength="10" maxLength="600"></textarea>
+                <label for="education">Education</label>
+                <textarea id="education" placeholder =  "education" minlength="10" maxLength="600"></textarea>
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+        <p id="errorMessage"></p>
+        <button type="button" id="deleteButton">Delete user</button>
+        <p id="errorMessage1"></p>
+        <button type="button" id="logoutButton">Logout</button>
+        <p id="errorMessage2"></p>
+    <script src="../js/settings.js" type="module"></script>
+    </body>
+</html>

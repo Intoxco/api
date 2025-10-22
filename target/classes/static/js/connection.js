@@ -1,21 +1,15 @@
-const url = "http://localhost:20001/"
+(function() {
+    if(sessionStorage.getItem("ip")!= null) {
+        document.location.href = "login.html";
+    }
+}())
+const form = document.getElementById("form");
+const ip = document.getElementById("ip");
+const port = document.getElementById("port");
+form.addEventListener("submit",(event)=>{
+    event.preventDefault();
+    sessionStorage.setItem("ip",ip.value);
+    sessionStorage.setItem("port",port.value);
+    document.location.href ="login.html"
+})
 
-
-
-//Put login
-
-async function login(){
-    const response = await fetch(url + "/login", {
-        method: "POST",
-        body: JSON.stringify( {
-        username : "adm",
-        password : "123456"
-        }),
-        headers: {
-            "Content-type": "application/json",
-        },
-        });
-        console.log(response);
-}
-
-login();

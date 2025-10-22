@@ -12,6 +12,9 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class BodyData{
+    private String token;
+    @SerializedName("expires_in")
+    private Integer expiresIn;
     private String message;
     private String code;
     private List<FieldError> details;

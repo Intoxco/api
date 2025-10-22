@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.stream.Collectors;
 
-@RestControllerAdvice()
+    @RestControllerAdvice()
 public class GlobalExceptionHandler {
     private static final Gson gson = new Gson();
     @ExceptionHandler(MethodArgumentNotValidException.class)

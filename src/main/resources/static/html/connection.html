@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Connection</title>
+        <link rel="icon" href="../images/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/login.css">
+    </head>
+    <body>
+        <form method="POST" id="form">
+            <fieldset>
+                <legend>Connection</legend>
+                <input type="text" id="ip" placeholder="Ip" pattern = "^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$" required>
+                <label for="ip"></label>
+                <input type="number" id="port" placeholder="Port" min="0" max ="65535" required>
+                <label for="port"></label>
+                <button type="submit">Submit</button>
+            </fieldset>
+            <script type="module" src="../js/connection.js"></script>
+        </form>
+    </body>
+</html>

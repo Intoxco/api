@@ -13,11 +13,12 @@ public record CommonUserUpdateData(
     @Email
     @Pattern(regexp = "^$|.+")
     String email,
-    @Pattern(regexp = "^|.(\\([1-9]{2}\\)|[1-9]{2})9?[1-9]{4}-?[1-9]{4}$")
-    String phone,
+    @Pattern(regexp = "^$|^(\\([0-9]{2}\\)|[0-9]{2})9?[0-9]{4}-?[0-9]{4}$", message = "Must be empty or (XX)XXXXX-XXXX")    String phone,
     @Pattern(regexp = "|.{10,600}")
     String experience,
     @Pattern(regexp = "|.{10,600}")
     String education
+
 ){}
+
 
