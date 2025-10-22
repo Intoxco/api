@@ -24,15 +24,23 @@ public class AuthenticationController {
     private TokenService tokenService;
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody @Valid LoginData loginData) {
-        var usernamePassword  = new UsernamePasswordAuthenticationToken(loginData.username(), loginData.password());
-        var auth = authenticationManager.authenticate(usernamePassword);
-        var token = tokenService.generateToken((User)auth.getPrincipal());
         BodyData bodyData = new BodyData();
-        bodyData.setToken(token);
-        bodyData.setExpiresIn(10800);
-        ResponseEntity <String> response = new ResponseEntity<>(gson.toJson(bodyData), HttpStatus.OK);
-        System.out.println("Response sent:"+ response);
-        return response;
+        try {
+            var usernamePassword = new UsernamePasswordAuthenticationToken(loginData.username(), loginData.password());
+            var auth = authenticationManager.authenticate(usernamePassword);
+            var token = tokenService.generateToken((User) auth.getPrincipal());
+            bodyData.setToken(token);
+            bodyData.setExpiresIn(10800);
+            ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData), HttpStatus.OK);
+            System.out.println("Response sent:" + response);
+            return response;
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            bodyData.setMessage("Invalid credentials");
+            ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData),HttpStatus.UNAUTHORIZED);
+            System.out.println("Response sent:" + response);
+            return response;
+        }
     }
     @PostMapping("/logout")
     public ResponseEntity<String> logout(HttpServletRequest request) {

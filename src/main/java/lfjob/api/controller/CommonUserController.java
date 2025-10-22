@@ -142,7 +142,6 @@ public class CommonUserController {
                 ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData),HttpStatus.UNAUTHORIZED);
                 System.out.println("Response sent: "+ response);
                 return response;
-
             }
             commonUserRepository.deleteById(userId);
             ResponseEntity<String> response = new ResponseEntity<>(HttpStatus.OK);
