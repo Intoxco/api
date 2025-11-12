@@ -102,7 +102,8 @@ public class CompanyController {
             Company company = companyRepository.getReferenceById(companyId);
             company.setPassword(encryptedPassword);
             company.updateData(companyUpdateData);
-            ResponseEntity<String> response = new ResponseEntity<>(HttpStatus.OK);
+            bodyData.setMessage("Updated");
+            ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData),HttpStatus.UNAUTHORIZED);
             System.out.println("Response sent: "+ response);
             return response;
         }catch(NoSuchElementException e) {
@@ -138,7 +139,8 @@ public class CompanyController {
                 return response;
             }
             companyRepository.deleteById(companyId);
-            ResponseEntity<String> response = new ResponseEntity<>(HttpStatus.OK);
+            bodyData.setMessage("Company deleted successfully");
+            ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData),HttpStatus.OK);
             System.out.println("Response sent: "+ response);
             return response;
         } catch(NoSuchElementException e){

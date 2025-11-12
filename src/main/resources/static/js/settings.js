@@ -83,7 +83,7 @@ let inputs;
         phoneLabel.setAttribute("for","phone");
         phoneLabel.textContent = "Phone";
         const phoneInput = document.createElement("input");
-        setAttributes(phoneInput,{type:"text",id:"phone",placeholder:"(DD)NNNNN-NNNN",pattern:"(.|\([0-9]{2}\)|[0-9]{2})9?[0-9]{4}-?[0-9]{4}",required:""});
+        setAttributes(phoneInput,{type:"text",id:"phone",placeholder:"(DD)NNNNN-NNNN",required:""});
         const streetLabel = document.createElement("label");
         streetLabel.setAttribute("for","street");
         streetLabel.textContent= "Street";

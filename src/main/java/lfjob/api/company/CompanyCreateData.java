@@ -4,7 +4,7 @@ import jakarta.validation.constraints.*;
 
 public record CompanyCreateData(
         @Size(min=4,max = 150, message="Must have between 4 and 150 letters")
-        @NotBlank
+        @NotBlank(message="Must not be blank")
         String name,
         @NotBlank(message="Must not be blank")
         @Size(min=4,max = 150, message="Must have between 4 and 150 letters")

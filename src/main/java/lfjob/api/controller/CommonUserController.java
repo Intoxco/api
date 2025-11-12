@@ -36,7 +36,7 @@ public class CommonUserController {
     @ResponseBody
     @PostMapping
     public ResponseEntity<String> create(@Valid @RequestBody CommonUserCreateData commonUserData){
-        BodyData bodyData = new BodyData();
+        BodyData bodyData = new BodyData(   );
         try {
             String password = new BCryptPasswordEncoder().encode(commonUserData.password());
             CommonUser user = new CommonUser(commonUserData);
