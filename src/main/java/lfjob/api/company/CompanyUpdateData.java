@@ -1,0 +1,36 @@
+package lfjob.api.company;
+
+import jakarta.validation.constraints.*;
+
+public record CompanyUpdateData(
+        @Size(min=4, max=150)
+        @NotBlank
+        String name,
+        @NotBlank
+        @Size(min=4,max = 150)
+        String business,
+        @NotNull
+        @Pattern(regexp="^[0-9a-zA-Z]{3,20}",message="Must have 3 to 20 non-especial characters")
+        String password,
+        @NotBlank
+        @Size(min=4, max=150)
+        String street,
+        @Pattern(regexp="[0-9]{1,8}")
+        @NotBlank
+        String number,
+        @Size(min=3, max=150)
+        @NotBlank
+        String city,
+        @NotNull
+        @Pattern(regexp="^(AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)$",message="Invalid State, must be abbreviated and in upper case")
+        String state,
+        @Pattern(regexp = "^(\\([0-9]{2}\\)|[0-9]{2})9?[0-9]{4}-?[0-9]{4}$",message="Invalid format,should be (NN)NNNNN-NNNN")
+        @NotNull
+        String phone,
+        @Email
+        @Size(min=10, max=150)
+        @NotNull
+        String email
+    ){
+}
+

@@ -16,7 +16,7 @@ public record CommonUserCreateData(
         @Nullable
         @Email(message="Invalid email format")
         String email,
-        @Pattern(regexp = "^(\\([0-9]{2}\\)|[0-9]{2})9?[0-9]{4}-?[0-9]{4}$",message="Invalid format")
+        @Pattern(regexp = "^(\\([0-9]{2}\\)|[0-9]{2})9?[0-9]{4}-?[0-9]{4}$",message="Invalid format,should be (NN)NNNNN-NNNN")
         String phone,
         @Size(min=10,max=600,message="Must have 10 to 600 characters")
         String experience,

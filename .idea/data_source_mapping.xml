@@ -5,5 +5,6 @@
     <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V3__create-table-common_user.sql" value="e6fcea23-cc91-4ce0-b6e4-e6b872841762" />
     <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V4__create_table-job.sql" value="e6fcea23-cc91-4ce0-b6e4-e6b872841762" />
     <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V5__alter_table_user.sql" value="e6fcea23-cc91-4ce0-b6e4-e6b872841762" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V6__alter_table_company.sql" value="e6fcea23-cc91-4ce0-b6e4-e6b872841762" />
   </component>
 </project>

@@ -22,6 +22,8 @@ public class BodyData{
     private String business;
     private String street;
     private String password;
+    private String city;
+    private String state;
     private String username;
     private String number;
     private String phone;
@@ -36,7 +38,6 @@ public class BodyData{
     private Double salary;
     @SerializedName("job_id")
     private Integer jobId;
-    // nao sei como sera private Token token;
     private Filter filter;
     private List<Job> items;
 }

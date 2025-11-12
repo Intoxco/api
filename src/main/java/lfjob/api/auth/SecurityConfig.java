@@ -41,7 +41,12 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.POST,"/logout").authenticated()
                                 .requestMatchers(HttpMethod.GET,"/users/{user_id}").hasAuthority("user")
                                 .requestMatchers(HttpMethod.PATCH,"/users/{user_id}").hasAuthority("user")
-                                .requestMatchers(HttpMethod.DELETE,"/users/{user_id}").hasAuthority("user"))
+                                .requestMatchers(HttpMethod.DELETE,"/users/{user_id}").hasAuthority("user")
+                                .requestMatchers(HttpMethod.POST,"/companies").permitAll()
+                                .requestMatchers(HttpMethod.GET,"/companies/{company_id}").hasAuthority("company")
+                                .requestMatchers(HttpMethod.DELETE,"/companies/{company_id}").hasAuthority("company")
+                                .requestMatchers(HttpMethod.PATCH,"/companies/{company_id}").hasAuthority("company")
+                )
                 .exceptionHandling(ex -> ex
                         .accessDeniedHandler((request, response, accessDeniedException) -> {
                             response.setStatus(HttpStatus.UNAUTHORIZED.value());

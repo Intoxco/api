@@ -1,3 +1,221 @@
+POST http://localhost:20001/companies
+Content-Type: application/json
+Content-Length: 260
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Madero",
+  "business": "Comida",
+  "username": "madeirinho2",
+  "password": "senha",
+  "street": "Marquês de Maricá",
+  "number": "1328",
+  "city": "Ponta Grossa",
+  "state": "PR",
+  "phone": "42995443534",
+  "email": "madeirinho2@madeiro.com"
+}
+
+<> 2025-11-05T235540.201.txt
+
+###
+
+POST http://localhost:20001/companies
+Content-Type: application/json
+Content-Length: 260
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Madero",
+  "business": "Comida",
+  "username": "madeirinho2",
+  "password": "senha",
+  "street": "Marquês de Maricá",
+  "number": "1328",
+  "city": "Ponta Grossa",
+  "state": "PR",
+  "phone": "42995443534",
+  "email": "madeirinho2@madeiro.com"
+}
+
+<> 2025-11-05T235449.409.txt
+
+###
+
+POST http://localhost:20001/companies
+Content-Type: application/json
+Content-Length: 260
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Madero",
+  "business": "Comida",
+  "username": "madeirinho2",
+  "password": "senha",
+  "street": "Marquês de Maricá",
+  "number": "1328",
+  "city": "Ponta Grossa",
+  "state": "PR",
+  "phone": "42995443534",
+  "email": "madeirinho2@madeiro.com"
+}
+
+<> 2025-11-05T234530.409.txt
+
+###
+
+POST http://localhost:20001/companies
+Content-Type: application/json
+Content-Length: 260
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Madero",
+  "business": "Comida",
+  "username": "madeirinho2",
+  "password": "senha",
+  "street": "Marquês de Maricá",
+  "number": "1328",
+  "city": "Ponta Grossa",
+  "state": "PR",
+  "phone": "42995443534",
+  "email": "madeirinho2@madeiro.com"
+}
+
+<> 2025-11-05T234413.409.txt
+
+###
+
+POST http://localhost:20001/companies
+Content-Type: application/json
+Content-Length: 260
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Madero",
+  "business": "Comida",
+  "username": "madeirinho2",
+  "password": "senha",
+  "street": "Marquês de Maricá",
+  "number": "1328",
+  "city": "Ponta Grossa",
+  "state": "PR",
+  "phone": "42995443534",
+  "email": "madeirinho2@madeiro.com"
+}
+
+<> 2025-11-05T234353.409.txt
+
+###
+
+POST http://localhost:20001/companies
+Content-Type: application/json
+Content-Length: 260
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Madero",
+  "business": "Comida",
+  "username": "madeirinho2",
+  "password": "senha",
+  "street": "Marquês de Maricá",
+  "number": "1328",
+  "city": "Ponta Grossa",
+  "state": "PR",
+  "phone": "42995443534",
+  "email": "madeirinho2@madeiro.com"
+}
+
+<> 2025-11-05T233450.409.txt
+
+###
+
+POST http://localhost:20001/companies
+Content-Type: application/json
+Content-Length: 260
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Madero",
+  "business": "Comida",
+  "username": "madeirinho2",
+  "password": "senha",
+  "street": "Marquês de Maricá",
+  "number": "1328",
+  "city": "Ponta Grossa",
+  "state": "PR",
+  "phone": "42995443534",
+  "email": "madeirinho2@madeiro.com"
+}
+
+<> 2025-11-05T232825.409.txt
+
+###
+
+POST http://localhost:20001/login
+Content-Type: application/json
+Content-Length: 48
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "Rafael",
+  "password": "1234"
+}
+
+<> 2025-11-05T232724.200.txt
+
+###
+
+POST http://localhost:20001/users
+Content-Type: application/json
+Content-Length: 68
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "Rafael",
+  "password": "1234",
+  "name": "rafael"
+}
+
+<> 2025-11-05T232717.201.txt
+
+###
+
+POST http://localhost:20001/usuarios
+Content-Type: application/json
+Content-Length: 68
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "Rafael",
+  "password": "1234",
+  "name": "rafael"
+}
+
+<> 2025-11-05T232658.403.json
+
+###
+
 POST http://127.0.0.1:20001/login
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMyIsImV4cCI6MTc2MDgzMzYxNiwicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6InJhZmEifQ.ZCRuIUxahcoPxNsiT0BhnFBoHE_WN2pG8gggzqMnHwg
@@ -680,166 +898,6 @@ Accept: */*
 }
 
 <> 2025-10-18T153539.403.txt
-
-###
-
-POST http://127.0.0.1:20001/login
-Content-Type: application/json
-Content-Length: 46
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "rafa",
-  "password": "1234"
-}
-
-<> 2025-10-18T153514.403.txt
-
-###
-
-POST http://127.0.0.1:20001/login
-Content-Type: application/json
-Content-Length: 46
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "rafa",
-  "password": "1234"
-}
-
-<> 2025-10-18T153403.403.txt
-
-###
-
-POST http://127.0.0.1:20001/login
-Content-Type: application/json
-Content-Length: 46
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "rafa",
-  "password": "1234"
-}
-
-<> 2025-10-18T153213.403.txt
-
-###
-
-POST http://127.0.0.1:20001/login
-Content-Type: application/json
-Content-Length: 46
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "rafa",
-  "password": "1234"
-}
-
-<> 2025-10-18T153132.403.txt
-
-###
-
-POST http://127.0.0.1:20001/login
-Content-Type: application/json
-Content-Length: 46
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "rafa",
-  "password": "1234"
-}
-
-<> 2025-10-18T153105.403.txt
-
-###
-
-POST http://127.0.0.1:20001/login
-Content-Type: application/json
-Content-Length: 46
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "rafa",
-  "password": "1234"
-}
-
-<> 2025-10-18T153006.403.txt
-
-###
-
-POST http://127.0.0.1:20001/login
-Content-Type: application/json
-Content-Length: 46
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "rafa",
-  "password": "1234"
-}
-
-<> 2025-10-18T152355.403.txt
-
-###
-
-POST http://127.0.0.1:20001/login
-Content-Type: application/json
-Content-Length: 46
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "rafa",
-  "password": "1234"
-}
-
-<> 2025-10-18T152114.400.txt
-
-###
-
-POST http://127.0.0.1:20001/login
-Content-Type: application/json
-Content-Length: 46
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "rafa",
-  "password": "1234"
-}
-
-<> 2025-10-18T152104.400.txt
-
-###
-
-POST http://127.0.0.1:20001/login
-Content-Type: application/json
-Content-Length: 52
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.1
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "rafa",
-  "password": "minhasenha"
-}
-
-<> 2025-10-18T151925.401.txt
 
 ###
 

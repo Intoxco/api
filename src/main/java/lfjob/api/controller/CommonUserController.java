@@ -1,20 +1,16 @@
 package lfjob.api.controller;
 
-import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.google.gson.Gson;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.transaction.Transactional;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
-import lfjob.api.others.gsonData.TokenData;
-import lfjob.api.service.TokenService;
 import lfjob.api.common_user.CommonUser;
 import lfjob.api.common_user.CommonUserCreateData;
 import lfjob.api.common_user.CommonUserRepository;
 import lfjob.api.common_user.CommonUserUpdateData;
 import lfjob.api.others.gsonData.BodyData;
 import lfjob.api.user.UserRepository;
-import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -27,10 +23,12 @@ import java.nio.file.AccessDeniedException;
 import java.sql.SQLException;
 import java.util.NoSuchElementException;
 
+import static lfjob.api.controller.AuthenticationController.checkToken;
+
 @RestController
 @RequestMapping("/users")
 public class CommonUserController {
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
     @Autowired
     private CommonUserRepository commonUserRepository;
     @Autowired
@@ -104,6 +102,11 @@ public class CommonUserController {
             ResponseEntity<String> response = new ResponseEntity<>(HttpStatus.OK);
             System.out.println("Response sent: "+ response);
             return response;
+        }catch(NoSuchElementException e) {
+            bodyData.setMessage("User not found");
+            ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData), HttpStatus.NOT_FOUND);
+            System.out.println("Response sent:" + response);
+            return response;
         }catch(JpaSystemException e){
             bodyData.setMessage("Username already exists");
             ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData),HttpStatus.CONFLICT);
@@ -115,25 +118,14 @@ public class CommonUserController {
             System.out.println("Response sent:" +response);
             return response;
         }catch (AccessDeniedException e) {
-        bodyData.setMessage("Forbidden");
-        ResponseEntity<String> response = new  ResponseEntity<>(gson.toJson(bodyData), HttpStatus.FORBIDDEN);
-        System.out.println("Response sent:" +response);
-        return response;
-    }
+            bodyData.setMessage("Forbidden");
+            ResponseEntity<String> response = new  ResponseEntity<>(gson.toJson(bodyData), HttpStatus.FORBIDDEN);
+            System.out.println("Response sent:" +response);
+            return response;
+        }
     }
 
-    private boolean checkToken(@PathVariable Long userId, HttpServletRequest req, BodyData bodyData) throws AccessDeniedException {
-        String token = TokenService.recoverToken(req);
-        if(token == null || token.isEmpty() || !TokenService.checkExpiration(token)){
-            bodyData.setMessage("Invalid Token");
-            return true;
-        }
-        TokenData tokenData = TokenService.getTokenData(token);
-        if(Long.parseLong(tokenData.getSub())!=userId){
-            throw new AccessDeniedException("Forbidden");
-        }
-        return false;
-    }
+
 
     @Transactional
     @DeleteMapping("/{userId}")
@@ -150,7 +142,6 @@ public class CommonUserController {
             System.out.println("Response sent: "+ response);
             return response;
         } catch(NoSuchElementException e){
-
             bodyData.setMessage("User not found");
             ResponseEntity<String> response = new ResponseEntity<>(gson.toJson(bodyData),HttpStatus.NOT_FOUND);
             System.out.println("Response sent:" +response);

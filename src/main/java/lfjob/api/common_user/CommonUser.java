@@ -36,28 +36,16 @@ public class CommonUser extends User {
         this.name = user.name();
         this.password = user.password();
         if(user.email() != null) {
-            if(user.email().isEmpty())
-                this.email = null;
-            else
-                this.email = user.email();
+            this.email = (user.email().isEmpty()) ? null : user.email();
         }
         if(user.phone() != null) {
-            if(user.phone().isEmpty())
-                this.phone = null;
-            else
-                this.phone = user.phone();
+            this.phone = (user.phone().isEmpty()) ? null : user.phone();
         }
         if(user.experience() != null) {
-            if(user.experience().isEmpty())
-                this.experience = null;
-            else
-                this.experience = user.experience();
+            this.experience = (user.experience().isEmpty()) ? null : user.experience();
         }
         if(user.education() != null) {
-            if(user.education().isEmpty())
-                this.education = null;
-            else
-                this.education = user.education();
+            this.education = (user.education().isEmpty()) ? null : user.education();
         }
     }
     @Override

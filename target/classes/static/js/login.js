@@ -25,7 +25,7 @@ form.addEventListener("submit",async (event)=>{
         const token = data.token;
         if(!token|| response.status !== 200){
             errorMessage.style.color = 'red';
-            if(data.message){
+            if(!data.message){
                 errorMessage.textContent="Internal Server error";
             }else{
                 errorMessage.textContent=data.message;
